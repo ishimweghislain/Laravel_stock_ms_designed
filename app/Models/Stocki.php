@@ -9,7 +9,6 @@ class Stocki extends Model
     protected $primaryKey = 'stockiid';
 
     protected $fillable = [
-
         'productid',
         'stockidate',
         'quantity',
@@ -17,11 +16,16 @@ class Stocki extends Model
         'totalprice',
     ];
 
-    protected $dates = [
-        'stockidate',
+    // Remove or keep $dates for compatibility
+    protected $dates = ['stockidate'];
+
+    // Add casts for Laravel 8+
+    protected $casts = [
+        'stockidate' => 'datetime',
     ];
 
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class, 'productid');
     }
 }

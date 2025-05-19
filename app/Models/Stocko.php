@@ -17,11 +17,16 @@ class Stocko extends Model
         'customer',
     ];
 
-    protected $dates = [
-        'stockodate',
+    // Keep $dates for compatibility with older versions
+    protected $dates = ['stockodate'];
+
+    // Add casts for Laravel 8+
+    protected $casts = [
+        'stockodate' => 'datetime',
     ];
 
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class, 'productid');
     }
 }
