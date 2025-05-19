@@ -86,7 +86,7 @@
             </div>
 
             <!-- Navigation -->
-            <nav class="mt-2">
+            <nav class="mt-2 pb-20"> <!-- Added pb-20 to prevent overlap with fixed logout -->
                 <h3 class="px-6 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Main Navigation
                 </h3>
@@ -145,9 +145,9 @@
                 </div>
             </nav>
 
-            <!-- Bottom Section -->
-            <div class="absolute bottom-0 w-full">
-                <div class="px-4 py-6 border-t border-gray-200 dark:border-gray-700">
+            <!-- Bottom Section (Logout Button) -->
+            <div class="fixed bottom-0 left-0 w-64 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-10">
+                <div class="px-4 py-6">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-red-600 dark:text-red-400">
@@ -172,7 +172,7 @@
 
         <!-- Mobile menu -->
         <div id="mobile-menu" class="fixed inset-0 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-            <div class="bg-white dark:bg-gray-800 h-full w-64 shadow-lg overflow-y-auto">
+            <div class="bg-white dark:bg-gray-800 h-full w-64 shadow-lg overflow-y-auto pb-20"> <!-- Added pb-20 to prevent overlap -->
                 <div class="flex justify-end p-4">
                     <button id="close-mobile-menu" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -263,9 +263,9 @@
                     </div>
                 </nav>
 
-                <!-- Bottom Section -->
-                <div class="mt-8 mb-20">
-                    <div class="px-4 py-6 border-t border-gray-200 dark:border-gray-700">
+                <!-- Bottom Section (Logout Button) -->
+                <div class="fixed bottom-0 left-0 w-64 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-10">
+                    <div class="px-4 py-6">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-red-600 dark:text-red-400">
